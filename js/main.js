@@ -54,14 +54,14 @@ function modificaContador(elemento, operacao){
    elemento.querySelector("[data-contador]").value = valorContador;
 }
 
-   function atualizaEstatistica(elemento, operacao){
-      let peca = elemento.dataset.peca;
-      let estatisticas = document.querySelectorAll("[data-estatistica]");
-      for(estatistica of estatisticas){   
-         if(operacao ==="+"){
-         estatistica.textContent = parseInt(estatistica.textContent) + parseInt(pecas[peca][estatistica.dataset.estatistica]);
-         } else if(operacao ==="-"){
-            estatistica.textContent = parseInt(estatistica.textContent) - parseInt(pecas[peca][estatistica.dataset.estatistica]);
-         }      
-      };
+function atualizaEstatistica(elemento, operacao){
+   let peca = elemento.dataset.peca;
+   let estatisticas = document.querySelectorAll("[data-estatistica]");
+   for(estatistica of estatisticas){   
+      if(operacao ==="+"){
+      estatistica.textContent = parseInt(estatistica.textContent) + parseInt(pecas[peca][estatistica.dataset.estatistica]);
+      } else if(operacao ==="-"){
+         estatistica.textContent = parseInt(estatistica.textContent) - parseInt(pecas[peca][estatistica.dataset.estatistica]);
+      }      
+   };
 }
