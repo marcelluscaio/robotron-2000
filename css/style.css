@@ -1,6 +1,6 @@
 :root {
-    --main-cinza: #CCCCCC;
-    --main-branco: #FFFFFF;
+    --main-cinza: #155315;
+    --main-branco: #34ca27;
     --main-preto: #000000;
 }
 
@@ -9,9 +9,11 @@
 }
 
 body {
-    background: url(../img/fundo.jpg);
-    background-position: center center;
-    background-size: cover cover;
+    background: url(../img/fundoMatrix2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #155315;
+    background-blend-mode: color-burn;
     padding: 0;
     margin: 0;
     font-weight: 300;
@@ -30,8 +32,11 @@ main {
 }
 
 .robotron {
-    background: url(../img/estrutura.png) no-repeat;
-    background-position: center center;
+    background-image: url(../img/estrutura.png);
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-color:rgba(0,0,0,0.5);
+    background-blend-mode: color-burn;
     margin: 0;
     flex-basis: 40%;
     position: relative;
@@ -41,7 +46,7 @@ main {
     height: 110%;
     z-index: 1;
     position: absolute;
-    left: -20%;
+    left: -5%;
     top: -5%;
 }
 
@@ -50,8 +55,8 @@ main {
     font-weight: 500;
     font-size: 130px;
     position: absolute;
-    bottom: 7rem;
-    left: -3rem;
+    bottom: 3rem;
+    left: -1rem;
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
