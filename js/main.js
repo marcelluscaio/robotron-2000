@@ -33,7 +33,17 @@ const pecas = {
     }
 }
 
+const cores = ["Vermelho", "Amarelo", "Azul", "Branco", "Preto", "Rosa"];
+
 const botoes = document.querySelectorAll(".controle-ajuste");
+const botoesCores = document.querySelectorAll(".seletor--botao");
+const caixaCores = document.querySelector(".robotron--seletor--caixa");
+let contador = 0;
+
+function preencheCaixaCores(contador){
+   caixaCores.value=cores[contador];
+}
+preencheCaixaCores(contador);
 
 botoes.forEach((botao) => {
    botao.addEventListener("click", (e) => {
@@ -64,4 +74,31 @@ function atualizaEstatistica(elemento, operacao){
          estatistica.textContent = parseInt(estatistica.textContent) - parseInt(pecas[peca][estatistica.dataset.estatistica]);
       }      
    };
+}
+
+
+botoesCores.forEach((botao) => {
+   botao.addEventListener("click", (e) => {      
+      atualizaRobo(trocaCor(e.target));
+   }); 
+})
+
+function trocaCor(botao){
+   if(botao.dataset.direcao === "esquerda"){
+      contador--   
+   } else if(botao.dataset.direcao === "direita"){
+      contador++
+   }
+   if(contador<0){
+      contador = cores.length-1;   
+   } else if (contador===cores.length){
+      contador = 0;
+   }
+   preencheCaixaCores(contador);
+   return caixaCores.value
+};
+
+function atualizaRobo(cor){
+   let robo = document.querySelector(".robo");
+   robo.src = `img/Robotron 2000/Robotron 2000 - ${caixaCores.value}/robotron.png`
 }

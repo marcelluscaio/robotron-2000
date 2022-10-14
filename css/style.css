@@ -32,14 +32,9 @@ main {
 }
 
 .robotron {
-    background-image: url(../img/estrutura.png);
-    background-repeat: no-repeat;    
-    background-position: center;
-    background-color:rgba(0,0,0,0.5);
-    background-blend-mode: color-burn;
     margin: 0;
     flex-basis: 40%;
-    position: relative;
+    position: relative;    
 }
 
 .robo {
@@ -62,6 +57,70 @@ main {
     text-orientation: mixed;
     color: rgba(255,255,255,0.8)
 }
+
+.robotron--seletor{
+    position: absolute;
+    bottom: -8%;
+    left: 50%;
+    width: 70%;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.robotron--seletor--caixa{
+    width: 70%;
+    background-color: var(--main-preto);
+    color: var(--main-branco);
+    border: 1px solid var(--main-cinza);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.1em;
+}
+
+.seletor--botao{
+    background-color: var(--main-preto);
+    color:  var(--main-cinza);
+    border: 3px solid  var(--main-cinza);
+    opacity: 0.5;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    transition: 0.2s ease-in-out;
+}
+
+.seletor--botao:before{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.botao-esquerda:before{
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-right: 0.5rem solid var(--main-cinza);
+}
+
+.botao-direita:before{
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.5rem solid var(--main-cinza);
+}
+
+.seletor--botao:hover{
+    transform: scale(1.05);
+    filter: brightness(1.8);
+}
+
+.seletor--botao:active{
+    filter: opacity(0);
+}
+
 
 .box {
     background: rgba(0,0,0,0.6);
